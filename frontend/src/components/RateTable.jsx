@@ -1,0 +1,5 @@
+export default function RateTable({ records, loading, onEdit, onDelete }) {
+  if (loading) return <div className="empty-state">Loading rate register...</div>;
+  if (!records.length) return <div className="empty-state"><strong>No records found.</strong><span>Add one above.</span></div>;
+  return <div className="table-wrap"><table><thead><tr><th>SR ID</th><th>Service</th><th>Executive level</th><th>Rate</th><th>Status</th><th>Attachment</th><th>Actions</th></tr></thead><tbody>{records.map((record) => <tr key={record.id}><td>{record.sr_id}</td><td>{record.service}</td><td>{record.executive_level}</td><td>{Number(record.rate).toFixed(2)}</td><td><span className={`status ${record.status.toLowerCase()}`}>{record.status}</span></td><td>{record.attachment_url ? <a className="attachment" href={record.attachment_url} target="_blank" rel="noreferrer">View</a> : <span className="muted">-</span>}</td><td className="row-actions"><button onClick={() => onEdit(record)}>Edit</button><button onClick={() => onDelete(record)}>Delete</button></td></tr>)}</tbody></table></div>;
+}

@@ -1,0 +1,15 @@
+{
+  "info": {
+    "name": "MI Product Rates API",
+    "_postman_id": "b1a1f1e0-0000-0000-0000-000000000001",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://127.0.0.1:8000/api" }],
+  "item": [
+    { "name": "1. Create (POST)", "request": { "method": "POST", "body": { "mode": "formdata", "formdata": [{ "key": "service", "value": "MI - Retail", "type": "text" }, { "key": "executive_level", "value": "Senior Manager", "type": "text" }, { "key": "rate", "value": "1500.00", "type": "text" }, { "key": "status", "value": "Active", "type": "text" }, { "key": "created_user", "value": "admin", "type": "text" }, { "key": "comments", "value": "Initial record", "type": "text" }, { "key": "attachment", "type": "file", "src": "" }] }, "url": { "raw": "{{baseUrl}}/mi-product-rates/" } } },
+    { "name": "2. List All (GET)", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/mi-product-rates/" } } },
+    { "name": "3. Retrieve One (GET)", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/mi-product-rates/1/" } } },
+    { "name": "4. Update (PUT)", "request": { "method": "PUT", "body": { "mode": "formdata", "formdata": [{ "key": "service", "value": "MI - Retail", "type": "text" }, { "key": "executive_level", "value": "General Manager", "type": "text" }, { "key": "rate", "value": "2000.00", "type": "text" }, { "key": "status", "value": "Active", "type": "text" }, { "key": "created_user", "value": "admin", "type": "text" }, { "key": "updated_user", "value": "admin", "type": "text" }] }, "url": { "raw": "{{baseUrl}}/mi-product-rates/1/" } } },
+    { "name": "5. Delete (DELETE)", "request": { "method": "DELETE", "url": { "raw": "{{baseUrl}}/mi-product-rates/1/" } } }
+  ]
+}
